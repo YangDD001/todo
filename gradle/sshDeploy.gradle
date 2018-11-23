@@ -1,4 +1,4 @@
-import com.manning.gia.ssh.Scp
+/*import com.manning.gia.ssh.Scp
 import com.manning.gia.ssh.SshExec
 
 apply from: "$rootDir/gradle/downloadWar.gradle"
@@ -56,7 +56,7 @@ task deleteOldArtifacts(dependsOn: [deleteTomcatWebappsDir, deleteTomcatWorkDir]
     doFirst {
         logger.quiet "Deleting old WAR artifacts."
     }
-}
+}*/
 /*
 task copyWarToWebappsDir(type: SshExec, dependsOn: deleteOldArtifacts) {
     command = "sudo -u tomcat cp /tmp/$warFile.name $tomcatRemoteDir/webapps/todo.war"
