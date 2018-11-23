@@ -17,16 +17,12 @@ configurations {
 }
 
 buildscript {
-
-configurations {
-    jsch
-}
     repositories {
-        mavenCentral()
+        		jcenter() 
     }
 
     dependencies {
-        jsch jsch 'org.apache.ant:ant-jsch:1.9.1'
+        classpath jsch 'org.apache.ant:ant-jsch:1.9.1'
     }
 }
 
