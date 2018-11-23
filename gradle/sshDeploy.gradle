@@ -10,7 +10,8 @@ ext {
 
     userHome = System.properties['user.home']
     vagrantKeyFile = file("$userHome/.vagrant.d/insecure_private_key")
-    remoteTmpDir = "$config.server.username@$config.server.hostname:/tmp"
+ //   remoteTmpDir = "$config.server.username@$config.server.hostname:/tmp"
+  remoteTmpDir = "manager@localhost:/tmp"
 }
 
 configurations {
