@@ -17,6 +17,10 @@ configurations {
 }
 
 buildscript {
+
+configurations {
+    jsch
+}
     repositories {
         mavenCentral()
     }
