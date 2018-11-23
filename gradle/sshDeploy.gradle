@@ -12,22 +12,14 @@ ext {
     remoteTmpDir = "$config.server.username@$config.server.hostname:/tmp"
 }
 
+/*
 configurations {
     jsch
-}
-
-buildscript {
-    repositories {
-        		jcenter() 
-    }
-
-    dependencies {
-        classpath 'org.apache.ant:ant-jsch:1.9.1'
-    }
-}
+} */
 
 dependencies {
-    jsch 'org.apache.ant:ant-jsch:1.9.1'
+ //   jsch 'org.apache.ant:ant-jsch:1.9.1'
+ classpath 'org.apache.ant:ant-jsch:1.9.1'
 }
 
 task copyWarToServer(type: Scp, dependsOn: fetchToDoWar) {
