@@ -17,7 +17,8 @@ configurations {
 }
 
 dependencies {
-    jsch 'org.apache.ant:ant-jsch:1.9.1'
+   // jsch 'org.apache.ant:ant-jsch:1.9.1'
+   jsch 'org.apache.ant:ant-jsch:0.9.1'
 }
 
 task copyWarToServer(type: Scp, dependsOn: fetchToDoWar) {
