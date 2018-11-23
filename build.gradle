@@ -1,6 +1,6 @@
 apply from: "$rootDir/gradle/envConfig.gradle"
 apply from: "$rootDir/gradle/versioning.gradle"
-/*apply plugin: 'sonar-runner'
+apply plugin: 'sonar-runner'
 
 sonarRunner {
     sonarProperties {
@@ -8,7 +8,7 @@ sonarRunner {
         property 'sonar.projectDescription', 'A task management application'
     }
 }
-*/
+
 allprojects {
     apply plugin: 'idea'
     group = 'com.manning.gia'
@@ -30,12 +30,12 @@ subprojects {
         reports.junitXml.destination = file("$reports.junitXml.destination/unit")
     }
 
- /*   sonarRunner {
+    sonarRunner {
         sonarProperties {
             property 'sonar.sourceEncoding', 'UTF-8'
         }
     }
-    */
+    
 }
 
 task wrapper(type: Wrapper) {

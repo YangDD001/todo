@@ -1,8 +1,6 @@
-/* import com.manning.gia.ProjectVersion */
+ import com.manning.gia.ProjectVersion 
 
 allprojects {
-//    ext.buildTimestamp = new Date().format('yyyy-MM-dd HH:mm:ss')
-		ext.buildTimestamp = "2018-3-13"
-//    project.version = new ProjectVersion(1, 0, System.env.SOURCE_BUILD_NUMBER)
- project.version = "1.0"
+    ext.buildTimestamp = new Date().format('yyyy-MM-dd HH:mm:ss')
+    project.version = new ProjectVersion(1, 0, System.env.SOURCE_BUILD_NUMBER)
 }
