@@ -1,5 +1,6 @@
-import com.manning.gia.ssh.Scp
-import com.manning.gia.ssh.SshExec
+import com.manning.gia.ssh.*
+//import com.manning.gia.ssh.Scp
+//import com.manning.gia.ssh.SshExec
 
 apply from: "$rootDir/gradle/downloadWar.gradle"
 
@@ -12,14 +13,12 @@ ext {
     remoteTmpDir = "$config.server.username@$config.server.hostname:/tmp"
 }
 
-/*
 configurations {
     jsch
-} */
+}
 
 dependencies {
- //   jsch 'org.apache.ant:ant-jsch:1.9.1'
- classpath 'org.apache.ant:ant-jsch:1.9.1'
+    jsch 'org.apache.ant:ant-jsch:1.9.1'
 }
 
 task copyWarToServer(type: Scp, dependsOn: fetchToDoWar) {
