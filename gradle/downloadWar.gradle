@@ -1,6 +1,7 @@
 repositories {
     maven { 
-        url config.binaryRepository.releaseUrl 
+       // url config.binaryRepository.releaseUrl 
+	url "http://localhost:8081/artifactory/libs-release-local"
     }
 }
 
