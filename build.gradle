@@ -1,4 +1,4 @@
-apply from: "$rootDir/gradle/envConfig.gradle"
+//apply from: "$rootDir/gradle/envConfig.gradle"
 apply from: "$rootDir/gradle/versioning.gradle"
 apply plugin: 'sonar-runner'
 
