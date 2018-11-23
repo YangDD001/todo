@@ -22,7 +22,7 @@ buildscript {
     }
 
     dependencies {
-        classpath jsch 'org.apache.ant:ant-jsch:1.9.1'
+        classpath 'org.apache.ant:ant-jsch:1.9.1'
     }
 }
 
