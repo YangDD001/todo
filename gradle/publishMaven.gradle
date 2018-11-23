@@ -1,7 +1,8 @@
 apply plugin: 'maven-publish'
 
 ext {
-    artifactoryReleaseRepoUrl = config.binaryRepository.releaseUrl
+   // artifactoryReleaseRepoUrl = config.binaryRepository.releaseUrl
+    artifactoryReleaseRepoUrl ="http://localhost:8081/artifactory/libs-release-local"
     artifactoryUsername = project.hasProperty('artifactoryUsername') ? project.getProperty('artifactoryUsername') : null
     artifactoryPassword = project.hasProperty('artifactoryPassword') ? project.getProperty('artifactoryPassword') : null
 }
