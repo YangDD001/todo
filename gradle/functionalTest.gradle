@@ -1,4 +1,4 @@
-apply plugin: 'jetty'
+//apply plugin: 'jetty'
 apply plugin: 'groovy'
 
 configurations {
@@ -40,7 +40,7 @@ ext {
     functionalJettyStopKey = 'stopKey'
     functionalJettyContextPath = 'todo'
 }
-
+/*
 task functionalJettyRun(type: org.gradle.api.plugins.jetty.JettyRun) {
     httpPort = functionalJettyHttpPort
     stopPort = functionalJettyStopPort
@@ -53,7 +53,7 @@ task functionalJettyStop(type: org.gradle.api.plugins.jetty.JettyStop) {
     stopPort = functionalJettyStopPort
     stopKey = functionalJettyStopKey
 }
-
+*/
 task localFunctionalTest(type: Test) {
     testClassesDir = sourceSets.functionalTest.output.classesDir
     classpath = sourceSets.functionalTest.runtimeClasspath
@@ -61,8 +61,8 @@ task localFunctionalTest(type: Test) {
     reports.junitXml.destination = functionalTestResultsDir
     systemProperties functionalCommonSystemProperties
     systemProperty 'geb.build.baseUrl', "http://localhost:$functionalJettyHttpPort/$functionalJettyContextPath/"
-    dependsOn functionalJettyRun
-    finalizedBy functionalJettyStop
+ //   dependsOn functionalJettyRun
+ //   finalizedBy functionalJettyStop
 }
 
 check.dependsOn localFunctionalTest
@@ -75,3 +75,13 @@ task remoteFunctionalTest(type: Test) {
     systemProperties functionalCommonSystemProperties
     systemProperty 'geb.build.baseUrl', "http://$config.tomcat.hostname:$config.tomcat.port/$config.tomcat.context/"
 }
+buildscript {
+    repositories { 
+    		jcenter() 
+    	}
+    dependencies {
+    		 classpath 'org.akhikhl.gretty:gretty:+' 
+    	}
+}
+
+apply plugin: 'org.akhikhl.gretty'

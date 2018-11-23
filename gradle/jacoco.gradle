@@ -1,4 +1,4 @@
-buildscript {
+/*buildscript {
     repositories {
         mavenCentral()
     }
@@ -12,4 +12,4 @@ apply plugin: org.ajoberstar.gradle.jacoco.plugins.JacocoPlugin
 
 jacoco {
     integrationTestTaskName = 'integrationTest'
-}
+}*/

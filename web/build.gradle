@@ -1,5 +1,5 @@
 apply plugin: 'war'
-apply plugin: 'jetty'
+//apply plugin: 'jetty'
 apply from: "$rootDir/gradle/functionalTest.gradle"
 apply from: "$rootDir/gradle/publishMaven.gradle"
 apply from: "$rootDir/gradle/sshDeploy.gradle"
@@ -29,7 +29,19 @@ war {
         into('WEB-INF/classes')
     }
 }
-
+/*
 jettyRun {
 	contextPath = 'todo'
 }
+*/
+
+buildscript {
+    repositories { 
+    		jcenter() 
+    	}
+    dependencies {
+    		 classpath 'org.akhikhl.gretty:gretty:+' 
+    	}
+}
+
+apply plugin: 'org.akhikhl.gretty'
